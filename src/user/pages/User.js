@@ -7,7 +7,7 @@ const User = () => {
       id: "ul",
       name: "John Thomas",
       image:
-        "https://www.google.com/url?sa=i&url=https%3A%2F%2Frelay.dev%2Fdocs%2Fguided-tour%2Frendering%2Ffragments%2F&psig=AOvVaw2BG0yU3_-R9LiZwvTKoNmy&ust=1672756180410000&source=images&cd=vfe&ved=0CBIQ3YkBahcKEwi4-pvBjKn8AhUAAAAAHQAAAAAQBw",
+        "https://www.visittheusa.com/sites/default/files/styles/hero_l/public/images/hero_media_image/2017-01/Getty_515070156_EDITORIALONLY_LosAngeles_HollywoodBlvd_Web72DPI_0.jpg?h=0a8b6f8b&itok=lst_2_5d",
       locations: 3,
     },
   ];
