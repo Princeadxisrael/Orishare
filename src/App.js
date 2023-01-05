@@ -14,6 +14,7 @@ const App = () => {
         <Route path="/" exact>
           <User />
         </Route>
+
         <Redirect to="/" />
       </Switch>
     </Router>
