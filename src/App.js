@@ -6,17 +6,21 @@ import {
   Switch,
 } from "react-router-dom";
 import User from "./user/pages/User";
+import MainNavigation from "./shared/components/Navigation/MainNavigation";
 
 const App = () => {
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact>
-          <User />
-        </Route>
+      <MainNavigation />
+      <main>
+        <Switch>
+          <Route path="/" exact>
+            <User />
+          </Route>
 
-        <Redirect to="/" />
-      </Switch>
+          <Redirect to="/" />
+        </Switch>
+      </main>
     </Router>
   );
 };
