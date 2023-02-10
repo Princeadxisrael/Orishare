@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import User from "./user/pages/User";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
+import UserPlace from "./places/pages/UserPlace";
 
 const App = () => {
   return (
@@ -16,6 +17,9 @@ const App = () => {
         <Switch>
           <Route path="/" exact>
             <User />
+          </Route>
+          <Route path="/:userId/locations" exact>
+            <UserPlace />
           </Route>
 
           <Redirect to="/" />
