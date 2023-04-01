@@ -34,7 +34,6 @@
     width: 40rem;
   }
 }
-
 .modal-enter {
   transform: translateY(-10rem);
   opacity: 0;

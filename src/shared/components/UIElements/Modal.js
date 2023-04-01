@@ -7,7 +7,10 @@ import "./Modal.css";
 
 const ModalOverlay = (props) => {
   const content = (
-    <div className={`modal ${props.className}`} style={props.style}>
+    <div
+      className={`modal ${!props.show ? "modal-enter" : "modal-enter-active"}`}
+      style={props.style}
+    >
       <header className={`modal__header ${props.headerClass}`}>
         <h2>{props.header}</h2>
       </header>
@@ -28,7 +31,7 @@ const ModalOverlay = (props) => {
 
 const Modal = (props) => {
   return (
-    <React.Fragment>
+    <>
       {props.show && <Backdrop onClick={props.onCancel} />}
       <CSSTransition
         in={props.show}
@@ -37,9 +40,11 @@ const Modal = (props) => {
         timeout={200}
         classNames="modal"
       >
-        <ModalOverlay {...props} />
+        <div>
+          <ModalOverlay {...props} />
+        </div>
       </CSSTransition>
-    </React.Fragment>
+    </>
   );
 };
 

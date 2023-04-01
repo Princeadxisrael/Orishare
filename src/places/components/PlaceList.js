@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../../shared/components/UIElements/Card";
-
+import Button from "../../shared/components/FormElements/Button";
 import PlaceItem from "./PlaceItem";
 import "./PlaceList.css";
 
@@ -10,8 +10,8 @@ const PlaceList = (props) => {
       <Card>
         <div className="place-list center">
           <h2>No Place found. Try Creating One?</h2>
-          <button>Create Place</button>
-          <button>Share Place</button>
+          <Button to="/locations/new">Create Place</Button>
+          <Button>Share Place</Button>
         </div>
       </Card>
     );
