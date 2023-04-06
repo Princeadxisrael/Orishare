@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext } from "react"; //useContext returns a value for a given context
 import { NavLink } from "react-router-dom";
 
 import { AuthContext } from "../../context/auth-context";
