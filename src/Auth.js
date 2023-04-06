@@ -1,15 +1,15 @@
 import React, { useState, useContext } from "react";
 
-import Input from "../../shared/components/FormElements/Input";
-import Button from "../../shared/components/FormElements/Button";
-import { useForm } from "../../shared/hooks/form-hook";
+import Input from "./shared/components/FormElements/Input";
+import Button from "./shared/components/FormElements/Button";
+import { useForm } from "./shared/hooks/form-hook";
 import {
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
   VALIDATOR_EMAIL,
-} from "../../shared/components/UIElements/util/validators";
-import Card from "../../shared/components/UIElements/Card";
-import { AuthContext } from "../../shared/context/auth-context";
+} from "./shared/components/UIElements/util/validators";
+import Card from "./shared/components/UIElements/Card";
+import { AuthContext } from "./shared/context/auth-context";
 import "./Auth.css";
 
 const Authentication = () => {
