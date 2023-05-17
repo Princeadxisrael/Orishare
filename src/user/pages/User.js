@@ -1,24 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import UserList from "../components/UsersList";
+import ErrorModal from "../../shared/components/UIElements/ErrorModal";
+import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 
 const User = () => {
-  const USERS = [
-    {
-      id: "u1",
-      name: "John Thomas",
-      image: "/img/User1.jpeg",
-      locations: 3,
-    },
-    // {
-    //   id: "ul",
-    //   name: "Susan Hook",
-    //   image:
-    //     "https://www.visittheusa.com/sites/default/files/styles/hero_l/public/images/hero_media_image/2017-01/Getty_515070156_EDITORIALONLY_LosAngeles_HollywoodBlvd_Web72DPI_0.jpg?h=0a8b6f8b&itok=lst_2_5d",
-    //   locations: 4,
-    // },
-  ];
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState();
+  const [loadedUsers, setLoadedUsers] = useState();
 
-  return <UserList items={USERS} />;
+  useEffect(() => {
+    const sendRequest = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch("http://localhost:5000/api/users/");
+        const responseData = await response.json();
+
+        if (!response.ok) {
+          throw new Error(response.err);
+        }
+        setLoadedUsers(responseData.users);
+      } catch (err) {
+        setError(err.message);
+      }
+      setIsLoading(false);
+    };
+    sendRequest();
+  }, []);
+
+  const errorHandler = () => {
+    setError(null);
+  };
+
+  return (
+    <>
+      <ErrorModal error={error} onClear={errorHandler} />
+      {isLoading && (
+        <div className="center">
+          <LoadingSpinner />
+        </div>
+      )}
+      {!isLoading && loadedUsers && <UserList items={loadedUsers} />};
+    </>
+  );
 };
 
 export default User;
